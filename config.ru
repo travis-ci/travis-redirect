@@ -1,8 +1,12 @@
 require 'yaml'
-redirects = YAML.load_file('redirects.yml')
+require 'rack/rewrite'
+
+use Rack::Rewrite do
+  r301 %r{^/blog/?(.*)$}, 'http://blog.travis-ci.com/$1'
+  r301 %r{^/docs/?(.*)$}, 'http://docs.travis-ci.com/$1'
+  r301 '/', 'http://docs.travis-ci.com'
+end
 
 run -> env {
-  host     = Rack::Request.new(env).host
-  location = redirects[host] || 'https://travis-ci.org'
-  [302, {'Location' => location, 'Content-Type' => 'text/plain'}, ["redirecting to #{location}"]]
+  [200, {}, ""]
 }

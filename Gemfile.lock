@@ -1,8 +1,10 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     puma (1.6.3)
       rack (~> 1.2)
     rack (1.5.2)
+    rack-rewrite (1.5.0)
 
 PLATFORMS
   ruby
@@ -10,3 +12,4 @@ PLATFORMS
 DEPENDENCIES
   puma
   rack
+  rack-rewrite
