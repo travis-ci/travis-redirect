@@ -2,7 +2,7 @@ require 'yaml'
 require 'rack/rewrite'
 
 use Rack::Rewrite do
-  r301 %r{^/(.+)$}, 'https://travis-ci.com/$1', host: 'magnum.travis-ci.com'
+  r301 %r{^/(.*)$}, 'https://travis-ci.com/$1', host: 'magnum.travis-ci.com'
   r301 '/', 'http://blog.travis-ci.com', host: 'blog.travis-ci.org'
   r301 '/', 'http://docs.travis-ci.com', host: 'docs.travis-ci.org'
   r301 '/', 'http://status.travis-ci.com', host: 'status.travis-ci.org'
