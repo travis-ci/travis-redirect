@@ -7,6 +7,7 @@ use Rack::Rewrite do
   r301 '/', 'http://docs.travis-ci.com', host: 'docs.travis-ci.org'
   r301 '/', 'http://status.travis-ci.com', host: 'status.travis-ci.org'
   r301 '/', 'http://chat.travis-ci.com', host: 'chat.travis-ci.org'
+  r301 '/', 'https://travis-ci.org/logo', host: 'tessa-ci.com'
   r301 '/blog.xml', 'http://blog.travis-ci.com/blog.xml'
   r301 '/blog-mobile.css', 'http://blog.travis-ci.com/blog-mobile.css'
   r301 '/blog.css', 'http://blog.travis-ci.com/blog.css'
